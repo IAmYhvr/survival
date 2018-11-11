@@ -60,34 +60,37 @@ function updateScreen() {
   document.getElementById("presNum").innerHTML = presnum;
 };
 
-if (typeof savegame.wood !== "undefined") wood = savegame.wood;
-if (typeof savegame.stone !== "undefined") stone = savegame.stone; //Check to not load corrupt save
-if (typeof savegame.food !== "undefined") food = savegame.food;
+if (typeof savegame !== 'null') {
 
-if (typeof savegame.axes !== "undefined") axes = savegame.axes;
-if (typeof savegame.axeCost !== "undefined") axeCost = savegame.axeCost;
-if (typeof savegame.pickaxes !== "undefined") pickaxes = savegame.pickaxes;
-if (typeof savegame.pickaxeCost !== "undefined") pickaxeCost = savegame.pickaxeCost;
-if (typeof savegame.spears !== "undefined") spears = savegame.spears;
-if (typeof savegame.spearCost !== "undefined") spearCost = savegame.spearCost;
+  if (typeof savegame.wood !== "undefined") wood = savegame.wood;
+  if (typeof savegame.stone !== "undefined") stone = savegame.stone; //Check to not load corrupt save
+  if (typeof savegame.food !== "undefined") food = savegame.food;
 
-if (typeof savegame.lumberjacks !== "undefined") lumberjacks = savegame.lumberjacks;
-if (typeof savegame.lumberjackCost !== "undefined") lumberjackCost = savegame.lumberjackCost;
-if (typeof savegame.miners !== "undefined") miners = savegame.miners;
-if (typeof savegame.minerCost !== "undefined") minerCost = savegame.minerCost;
-if (typeof savegame.hunters !== "undefined") hunters = savegame.hunters;
-if (typeof savegame.hunterCost !== "undefined") hunterCost = savegame.hunterCost;
+  if (typeof savegame.axes !== "undefined") axes = savegame.axes;
+  if (typeof savegame.axeCost !== "undefined") axeCost = savegame.axeCost;
+  if (typeof savegame.pickaxes !== "undefined") pickaxes = savegame.pickaxes;
+  if (typeof savegame.pickaxeCost !== "undefined") pickaxeCost = savegame.pickaxeCost;
+  if (typeof savegame.spears !== "undefined") spears = savegame.spears;
+  if (typeof savegame.spearCost !== "undefined") spearCost = savegame.spearCost;
 
-if (typeof savegame.forests !== "undefined") forests = savegame.forests;
-if (typeof savegame.forestCost !== "undefined") forestCost = savegame.forestCost;
-if (typeof savegame.quarries !== "undefined") quarries = savegame.quarries;
-if (typeof savegame.quarryCost !== "undefined") quarryCost = savegame.quarryCost;
-if (typeof savegame.farms !== "undefined") farms = savegame.farms;
-if (typeof savegame.farmCost !== "undefined") farmCost = savegame.farmCost;
+  if (typeof savegame.lumberjacks !== "undefined") lumberjacks = savegame.lumberjacks;
+  if (typeof savegame.lumberjackCost !== "undefined") lumberjackCost = savegame.lumberjackCost;
+  if (typeof savegame.miners !== "undefined") miners = savegame.miners;
+  if (typeof savegame.minerCost !== "undefined") minerCost = savegame.minerCost;
+  if (typeof savegame.hunters !== "undefined") hunters = savegame.hunters;
+  if (typeof savegame.hunterCost !== "undefined") hunterCost = savegame.hunterCost;
 
-if (typeof savegame.prestigeWTBC !== "undefined") prestigeWTBC = savegame.prestigeWTBC;
-if (typeof savegame.prestigeBanked !== "undefined") prestigeBanked = savegame.prestigeBanked;
+  if (typeof savegame.forests !== "undefined") forests = savegame.forests;
+  if (typeof savegame.forestCost !== "undefined") forestCost = savegame.forestCost;
+  if (typeof savegame.quarries !== "undefined") quarries = savegame.quarries;
+  if (typeof savegame.quarryCost !== "undefined") quarryCost = savegame.quarryCost;
+  if (typeof savegame.farms !== "undefined") farms = savegame.farms;
+  if (typeof savegame.farmCost !== "undefined") farmCost = savegame.farmCost;
 
+  if (typeof savegame.prestigeWTBC !== "undefined") prestigeWTBC = savegame.prestigeWTBC;
+  if (typeof savegame.prestigeBanked !== "undefined") prestigeBanked = savegame.prestigeBanked;
+
+}
 function woodClick(x) { //Increase Wood. If you put woodClick(15) into the console, it would increase wood by 15.
   wood += (x * prestigeBanked)
   updateScreen()
