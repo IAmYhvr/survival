@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+    h1, h2 {
+
+      color: #4CAF50;
+
+    }
+
+    div {
+
+      text-align: center;
+
+    }
+
+    button {
+
+      border-radius: 3px;
+
+    }
+    </style>
+    <meta charset="utf-8">
+    <title>Survival. (I couldn't think of a better name.)</title>
+  </head>
+  <body bgcolor="#1c1d20">
+    <div>
+    <h1>Manual</h1>
+    <button onclick="woodClick(1)">🌳<br><span id="wood"> 0 </span></button>
+    <button onclick="stoneClick(1)">💎<br><span id="stone"> 0 </span></button>
+    <button onclick="foodClick(1)">🥩<br><span id="food"> 0 </span></button>
+  <br>
+    <h1>Automatic</h1>
+    <h2>Tier 1</h2>
+    <button onclick="buyAxe()">Axes : <span id="axes">0</span><br><span>Cost : <span id="axeCost">10</span> Wood, Stone, Food</span></button>
+    <button onclick="buyPickaxe()">Pickaxes : <span id="pickaxes">0</span><br><span>Cost : <span id="pickaxeCost">10</span> Wood, Stone, Food</span></button>
+    <button onclick="buySpear()">Spears : <span id="spears">0</span><br><span>Cost : <span id="spearCost">10</span> Wood, Stone, Food</span></button>
+  <br>
+    <h2>Tier 2</h2>
+    <button onclick="buyLumberjack()">Lumberjacks : <span id="lumberjacks">0</span><br><span>Cost : <span id="lumberjackCost">1000</span> Stone, Food</span></button>
+    <button onclick="buyMiner()">Miners : <span id="miners">0</span><br><span>Cost : <span id="minerCost">1000</span> Wood, Food</span></button>
+    <button onclick="buyHunter()">Hunters : <span id="hunters">0</span><br><span>Cost : <span id="hunterCost">1000</span> Wood, Stone</span></button>
+  <br>
+    <h2>Tier 3</h2>
+    <button onclick="buyForest()">Forests : <span id="forests">0</span><br><span>Cost : <span id="forestCost">1000000</span> Wood, Food</span></button>
+    <button onclick="buyQuarry()">Quarries : <span id="quarries">0</span><br><span>Cost : <span id="quarryCost">1000000</span> Stone, Food,</span></button>
+    <button onclick="buyFarm()">Farms : <span id="farms">0</span><br><span>Cost : <span id="farmCost">1000000</span> Wood, Food</span></button>
+  <br>
+    <h1>Prestige</h1>
+    <button onclick="prestige()">Prestige to gain a<br><span id="presNum">1</span>x Multiplier</button>
+  <br>
+    <h1>Options</h1>
+    <button onclick="save()">Save Game<br>Autosave every 15s</button>
+    <button onclick="reset()">Reset Game<br>(All of it.)</button>
+  </div>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
