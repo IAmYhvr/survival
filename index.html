@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <style>
-    h1, h2 {
+    h1, h2, p {
 
       color: #4CAF50;
 
@@ -19,11 +19,18 @@
       border-radius: 3px;
 
     }
+
+    p {
+
+      padding-left: 200px;
+      padding-right: 200px;
+
+    }
     </style>
     <meta charset="utf-8">
     <title>Survival. (I couldn't think of a better name.)</title>
   </head>
-  <body bgcolor="#1c1d20">
+  <body bgcolor="#383838">
     <div>
     <h1>Manual</h1>
     <button onclick="woodClick(1)">🌳<br><span id="wood"> 0 </span></button>
@@ -49,6 +56,13 @@
     <h1>Prestige</h1>
     <button onclick="prestige()">Prestige to gain a<br><span id="presNum">1</span>x Multiplier</button>
   <br>
+    <h1>Help</h1>
+    <h2>Well, what do I do?</h2>
+    <p>Welcome! Under "Manual", Click each button 10 times. 🌳 = Wood, 💎 = Stone, and 🥩 = Food. Now, purchase an Axe. You are getting 1 wood per second, split into 200ms gaps. Purchase a Pickaxe and a Spear. </p>
+  <br>
+    <h2>Prestige</h2>
+    <p>For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 2, Tier 3 = 4, so on.) Each prestige point is a 1x multiplier, you start with 1.
+  <br>
     <h1>Options</h1>
     <button onclick="save()">Save Game<br>Autosave every 15s</button>
     <button onclick="reset()">Reset Game<br>(All of it.)</button>
@@ -56,3 +70,4 @@
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
+
