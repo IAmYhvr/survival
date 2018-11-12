@@ -35,7 +35,7 @@ function updateScreen() {
     document.getElementById("wood").innerHTML = wood.toExponential(2);
     document.getElementById("stone").innerHTML = stone.toExponential(2);  //Update GUI after load
     document.getElementById("food").innerHTML = food.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
-  
+
     document.getElementById("axes").innerHTML = axes;
     document.getElementById("axeCost").innerHTML = axeCost;
     document.getElementById("pickaxes").innerHTML = pickaxes;
@@ -314,16 +314,25 @@ function cheat(x) { //For development purposes, Feel free to use while bored
     food = x * 1e10;
 }
 
+function roundNum(num, precision) {
+  precision = Math.pow(10, precision)
+  return Math.ceil(num * precision) / precision
+}
+
 window.setInterval(function(){ //The Auto-Magic!
     woodClick((axes + (lumberjacks * 25) + (forests * 1000) * prestigeBanked) / 5); //Increases wood.
     stoneClick((pickaxes + (miners * 25) + (quarries * 1000)* prestigeBanked) / 5);
     foodClick((spears + (hunters * 25) + (farms * 1000) * prestigeBanked) / 5);
+    wood = roundNum(wood, 1)
+    stone = roundNum(stone, 1)
+    food = roundNum(food, 1)
     timeSinceAutoSave += 0.2; //For Auto-Save.
     if (timeSinceAutoSave === 15) {
         save(); //Call the save function.
         timeSinceAutoSave = 0 //Restart the Auto-Save cycle.
     }
     presnum = ((prestigeWTBC + 1) / prestigeBanked); //Updates the "Prestige to gain a x Multiplier" button
+    presnum = roundNum(presnum, 1)
     if (presnum <= 1) {
         presnum = 1
     }
