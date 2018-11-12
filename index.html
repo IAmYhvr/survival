@@ -1,83 +1,129 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128985761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-128985761-1');
-    </script>
-
-    <style>
-    h1, h2, p {
-
-      color: #4CAF50;
-
-    }
-
-    div {
-
-      text-align: center;
-
-    }
-
-    button {
-
-      border-radius: 3px;
-      background-color: white;
-
-    }
-
-    p {
-
-      padding-left: 200px;
-      padding-right: 200px;
-
-    }
-    </style>
+<head>
     <meta charset="utf-8">
-    <title>Survival. (I couldn't think of a better name.)</title>
-  </head>
-  <body bgcolor="#383838">
-    <div>
-    <h1>Manual</h1>
-    <button onclick="woodClick(1)">🌳<br><span id="wood"> 0 </span></button>
-    <button onclick="stoneClick(1)">🗿<br><span id="stone"> 0 </span></button>
-    <button onclick="foodClick(1)">🥩<br><span id="food"> 0 </span></button>
-  <br>
-    <h1>Automatic</h1>
-    <h2>Tier 1</h2>
-    <button onclick="buyAxe()">Axes : <span id="axes">0</span><br><span>Cost : <span id="axeCost">10</span> Wood, Stone, Food</span></button>
-    <button onclick="buyPickaxe()">Pickaxes : <span id="pickaxes">0</span><br><span>Cost : <span id="pickaxeCost">10</span> Wood, Stone, Food</span></button>
-    <button onclick="buySpear()">Spears : <span id="spears">0</span><br><span>Cost : <span id="spearCost">10</span> Wood, Stone, Food</span></button>
-  <br>
-    <h2>Tier 2</h2>
-    <button onclick="buyLumberjack()">Lumberjacks : <span id="lumberjacks">0</span><br><span>Cost : <span id="lumberjackCost">1000</span> Stone, Food</span></button>
-    <button onclick="buyMiner()">Miners : <span id="miners">0</span><br><span>Cost : <span id="minerCost">1000</span> Wood, Food</span></button>
-    <button onclick="buyHunter()">Hunters : <span id="hunters">0</span><br><span>Cost : <span id="hunterCost">1000</span> Wood, Stone</span></button>
-  <br>
-    <h2>Tier 3</h2>
-    <button onclick="buyForest()">Forests : <span id="forests">0</span><br><span>Cost : <span id="forestCost">1000000</span> Wood, Food</span></button>
-    <button onclick="buyQuarry()">Quarries : <span id="quarries">0</span><br><span>Cost : <span id="quarryCost">1000000</span> Stone, Food,</span></button>
-    <button onclick="buyFarm()">Farms : <span id="farms">0</span><br><span>Cost : <span id="farmCost">1000000</span> Wood, Food</span></button>
-  <br>
-    <h1>Prestige</h1>
-    <button onclick="prestige()">Prestige to gain a<br><span id="presNum">1</span>x Multiplier</button>
-  <br>
-    <h1>Help</h1>
-    <h2>Well, what do I do?</h2>
-    <p>Welcome! Under "Manual", Click each button 10 times. 🌳 = Wood, 🗿 = Stone, and 🥩 = Food. Now, purchase an Axe. You are getting 1 wood per second, split into 200ms gaps. Purchase a Pickaxe and a Spear. </p>
-  <br>
-    <h2>Prestige</h2>
-    <p>For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 2, Tier 3 = 4, so on.) Each prestige point is a 1x multiplier, you start with 1.
-  <br>
-    <h1>Options</h1>
-    <button onclick="save()">Save Game<br>Autosave every 15s</button>
-    <button onclick="reset()">Reset Game<br>(All of it.)</button>
-  </div>
+    <!-- Meta Information -->
+    <title>Survival.</title>
+    <meta name="description" content="Survival. An incremental game by YhvrWasTaken">
+    <meta name="author" content="YhvrWasTaken">
+    <!-- Link Stylesheet & Game Script -->
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="main.js"></script>
-  </body>
+</head>
+<body>
+
+<div>
+
+    <div>
+        <h1>Manual</h1>
+        <button onclick="woodClick(1)">
+            <span class="btn-line">🌳</span>
+            <span class="btn-line" id="wood">0</span>
+        </button>
+        <button onclick="stoneClick(1)">
+            <span class="btn-line">🗿</span>
+            <span class="btn-line" id="stone">0</span>
+        </button>
+        <button onclick="foodClick(1)">
+            <span class="btn-line">🥩</span>
+            <span class="btn-line" id="food">0</span>
+        </button>
+    </div>
+
+    <h1>Automatic</h1>
+
+    <div>
+        <h2>Tier 1</h2>
+        <button onclick="buyAxe()">
+            <span class="btn-line">Axes : <span id="axes">0</span></span>
+            <span class="btn-line">Cost : <span id="axeCost">10</span> Wood, Stone, Food</span>
+        </button>
+        <button onclick="buyPickaxe()">
+            <span class="btn-line">Pickaxes : <span id="pickaxes">0</span></span>
+            <span class="btn-line">Cost : <span id="pickaxeCost">10</span> Wood, Stone, Food</span>
+        </button>
+        <button onclick="buySpear()">
+            <span class="btn-line">Spears : <span id="spears">0</span></span>
+            <span class="btn-line">Cost : <span id="spearCost">10</span> Wood, Stone, Food</span>
+        </button>
+    </div>
+
+    <div>
+        <h2>Tier 2</h2>
+        <button onclick="buyLumberjack()">
+            <span class="btn-line">Lumberjacks : <span id="lumberjacks">0</span></span>
+            <span class="btn-line">Cost : <span id="lumberjackCost">1000</span> Stone, Food</span>
+        </button>
+        <button onclick="buyMiner()">
+            <span class="btn-line">Miners : <span id="miners">0</span></span>
+            <span class="btn-line">Cost : <span id="minerCost">1000</span> Wood, Food</span>
+        </button>
+        <button onclick="buyHunter()">
+            <span class="btn-line">Hunters : <span id="hunters">0</span></span>
+            <span class="btn-line">Cost : <span id="hunterCost">1000</span> Wood, Stone</span>
+        </button>
+    </div>
+
+    <div>
+        <h2>Tier 3</h2>
+        <button onclick="buyForest()">
+            <span class="btn-line">Forests : <span id="forests">0</span></span>
+            <span class="btn-line">Cost : <span id="forestCost">1000000</span> Wood, Food</span>
+        </button>
+        <button onclick="buyQuarry()">
+            <span class="btn-line">Quarries : <span id="quarries">0</span></span>
+            <span class="btn-line">Cost : <span id="quarryCost">1000000</span> Stone, Food,</span>
+        </button>
+        <button onclick="buyFarm()">
+            <span class="btn-line">Farms : <span id="farms">0</span></span>
+            <span class="btn-line">Cost : <span id="farmCost">1000000</span> Wood, Food</span>
+        </button>
+    </div>
+
+    <h1>Prestige</h1>
+
+    <div>
+        <button onclick="prestige()">
+            <span class="btn-line">Prestige to gain a</span>
+            <span class="btn-line"><span id="presNum">1</span>x Multiplier</span>
+        </button>
+
+        <h1>Help</h1>
+
+        <div>
+
+            <h2>Well, what do I do?</h2>
+            <p>
+                Welcome! Under "Manual", Click each button 10 times. 🌳 = Wood, 🗿 = Stone, and 🥩 = Food. Now, purchase an Axe.
+                You are getting 1 wood per second, split into 200ms gaps. Purchase a Pickaxe and a Spear.
+            </p>
+
+            <h2>Prestige</h2>
+            <p>
+                For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 2, Tier 3 =
+                4, so on.) Each prestige point is a 1x multiplier, you start with 1.
+            </p>
+        </div>
+
+    </div>
+
+    <div>
+        <h1>Options</h1>
+        <button onclick="save()">
+            <span class="btn-line">Save Game</span>
+            <span class="btn-line">Autosave every 15s</span>
+
+        </button>
+        <button onclick="reset()">
+            <span class="btn-line">Reset Game</span>
+            <span class="btn-line">(All of it.)</span>
+        </button>
+    </div>
+</div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128985761-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-128985761-1');</script>
+</body>
 </html>
