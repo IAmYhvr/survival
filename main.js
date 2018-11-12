@@ -35,8 +35,7 @@ function updateScreen() {
     document.getElementById("wood").innerHTML = wood.toExponential(2);
     document.getElementById("stone").innerHTML = stone.toExponential(2);  //Update GUI after load
     document.getElementById("food").innerHTML = food.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
-    document.getElementById("science").innerHTML = science.toExponential(2);
-
+  
     document.getElementById("axes").innerHTML = axes;
     document.getElementById("axeCost").innerHTML = axeCost;
     document.getElementById("pickaxes").innerHTML = pickaxes;
