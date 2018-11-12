@@ -1,0 +1,39 @@
+body{
+    /* Background color and default font */
+    background: #383838;
+    font-family: Serif, serif;
+}
+
+h1, h2, p {
+    color: #4CAF50;
+}
+
+div {
+    text-align: center;
+}
+
+/* Span lines for the button instead of using <br> */
+span.btn-line{
+    display: block;
+}
+
+button {
+    border-radius: 3px;
+    /* Remove blue glow from button */
+    outline: none;
+    /* Set text and background colors */
+    color: #000;
+    background: #fff;
+    /* Use pointer cursor */
+    cursor: pointer;
+}
+
+/* Apply this style while the button is clicked */
+button:active{
+    border-top: solid 2px #8f8f8f;
+    border-left: solid 2px #8f8f8f;
+}
+
+p {
+    padding: 0 200px;
+}
