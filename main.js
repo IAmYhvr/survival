@@ -12,18 +12,18 @@ var spears = 0;
 var spearCost = 10;
 
 var lumberjacks = 0;
-var lumberjackCost = 1000;
+var lumberjackCost = 1e4;
 var miners = 0;             //Tier 2
-var minerCost = 1000;
+var minerCost = 1e4;
 var hunters = 0;
-var hunterCost = 1000;
+var hunterCost = 1e4;
 
 var forests = 0;
-var forestCost = 1000000;
+var forestCost = 1e7;
 var quarries = 0;             //Tier 3
-var quarryCost = 1000000;
+var quarryCost = 1e7;
 var farms = 0;
-var farmCost = 1000000;
+var farmCost = 1e7;
 
 var prestigeWTBC = 0;
 var prestigeBanked = 1;      //Prestige
@@ -58,6 +58,7 @@ function updateScreen() {
     document.getElementById("farmCost").innerHTML = farmCost.toExponential(2);
 
     document.getElementById("presNum").innerHTML = presnum;
+    document.getElementById("presCurrent").innerHTML = prestigeBanked;
 }
 
 if (savegame !== null) {
@@ -149,7 +150,7 @@ function buyLumberjack(){
         food -= lumberjackCost;
         lumberjackCost += (lumberjacks * 1000);
         lumberjacks += 1;
-        prestigeWTBC += 2;
+        prestigeWTBC += 5;
         updateScreen()
     }
 }
@@ -160,7 +161,7 @@ function buyMiner(){
         food -= minerCost;
         minerCost += (miners * 1000);
         miners += 1;
-        prestigeWTBC += 2;
+        prestigeWTBC += 5;
         updateScreen()
     }
 }
@@ -171,7 +172,7 @@ function buyHunter(){
         stone -= hunterCost;
         hunterCost += (hunters * 1000);
         hunters += 1;
-        prestigeWTBC += 2;
+        prestigeWTBC += 5;
         updateScreen()
     }
 }
@@ -182,7 +183,7 @@ function buyForest(){
         food -= forestCost;
         forestCost += (lumberjacks * 100000);
         forests += 1;
-        prestigeWTBC += 4;
+        prestigeWTBC += 25;
         updateScreen()
     }
 }
@@ -193,7 +194,7 @@ function buyQuarry(){
         food -= quarryCost;
         quarryCost += (quarries * 100000);
         quarries += 1;
-        prestigeWTBC += 4;
+        prestigeWTBC += 25;
         updateScreen()
     }
 }
@@ -204,7 +205,7 @@ function buyFarm(){
         food -= farmCost;
         farmCost += (farms * 100000);
         farms += 1;
-        prestigeWTBC += 4;
+        prestigeWTBC += 25;
         updateScreen()
     }
 }
@@ -243,33 +244,35 @@ function save() { //This function saves the game!
 }
 
 function reset() { //Resets progress.
+
     wood = 0;
-    stone = 0;
+    stone = 0;              //Currency
     food = 0;
 
     axes = 0;
     axeCost = 10;
-    pickaxes = 0;
+    pickaxes = 0;           //Tier 1
     pickaxeCost = 10;
     spears = 0;
     spearCost = 10;
 
     lumberjacks = 0;
-    lumberjackCost = 1000;
-    miners = 0;
-    minerCost = 1000;
+    lumberjackCost = 1e4;
+    miners = 0;             //Tier 2
+    minerCost = 1e4;
     hunters = 0;
-    hunterCost = 1000;
+    hunterCost = 1e4;
 
     forests = 0;
-    forestCost = 1000000;
-    quarries = 0;
-    quarryCost = 1000000;
+    forestCost = 1e7;
+    quarries = 0;             //Tier 3
+    quarryCost = 1e7;
     farms = 0;
-    farmCost = 1000000;
+    farmCost = 1e7;
 
-    prestigeBanked = 1.000;
-    prestigeWTBC = 0.000;
+    prestigeWTBC = 0;
+    prestigeBanked = 1;      //Prestige
+    presnum = 1.000;
 
     save();
     updateScreen();
@@ -280,38 +283,38 @@ function prestige() { //Prestige function.
 
     prestigeWTBC = 0.000; //So you can't get it again
 
-    wood = 0;
-    stone = 0;
-    food = 0;
+      wood = 0;
+      stone = 0;              //Currency
+      food = 0;
 
-    axes = 0;
-    axeCost = 10;
-    pickaxes = 0;
-    pickaxeCost = 10;
-    spears = 0;
-    spearCost = 10;
+      axes = 0;
+      axeCost = 10;
+      pickaxes = 0;           //Tier 1
+      pickaxeCost = 10;
+      spears = 0;
+      spearCost = 10;
 
-    lumberjacks = 0;
-    lumberjackCost = 1000;
-    miners = 0;
-    minerCost = 1000;
-    hunters = 0;
-    hunterCost = 1000;
+      lumberjacks = 0;
+      lumberjackCost = 1e4;
+      miners = 0;             //Tier 2
+      minerCost = 1e4;
+      hunters = 0;
+      hunterCost = 1e4;
 
-    forests = 0;
-    forestCost = 1000000;
-    quarries = 0;
-    quarryCost = 1000000;
-    farms = 0;
-    farmCost = 1000000;
+      forests = 0;
+      forestCost = 1e7;
+      quarries = 0;             //Tier 3
+      quarryCost = 1e7;
+      farms = 0;
+      farmCost = 1e7;
 
     updateScreen()
 }
 
 function cheat(x) { //For development purposes, Feel free to use while bored
-    wood = x * 1e10;
-    stone = x * 1e10;
-    food = x * 1e10;
+    wood = x * 1e100;
+    stone = x * 1e100;
+    food = x * 1e100;
 }
 
 function roundNum(num, precision) {
@@ -320,9 +323,9 @@ function roundNum(num, precision) {
 }
 
 window.setInterval(function(){ //The Auto-Magic!
-    woodClick((axes + (lumberjacks * 25) + (forests * 1000) * prestigeBanked) / 5); //Increases wood.
-    stoneClick((pickaxes + (miners * 25) + (quarries * 1000)* prestigeBanked) / 5);
-    foodClick((spears + (hunters * 25) + (farms * 1000) * prestigeBanked) / 5);
+    woodClick((axes + (lumberjacks * 50) + (forests * 500) * prestigeBanked) / 5); //Increases wood.
+    stoneClick((pickaxes + (miners * 50) + (quarries * 500)* prestigeBanked) / 5);
+    foodClick((spears + (hunters * 50) + (farms * 500) * prestigeBanked) / 5);
     wood = roundNum(wood, 1)
     stone = roundNum(stone, 1)
     food = roundNum(food, 1)

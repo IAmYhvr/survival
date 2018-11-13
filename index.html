@@ -17,15 +17,15 @@
     <div>
         <h1>Manual</h1>
         <button onclick="woodClick(1)">
-            <span class="btn-line">🌳 / Wood</span>
+            <span class="btn-line"><img src="images/wood-pile.png"></span>
             <span class="btn-line" id="wood">0</span>
         </button>
         <button onclick="stoneClick(1)">
-            <span class="btn-line">🗿 / Stone</span>
+            <span class="btn-line"><img src="images/stone-tablet.png"></span>
             <span class="btn-line" id="stone">0</span>
         </button>
         <button onclick="foodClick(1)">
-            <span class="btn-line">🥩 / Food</span>
+            <span class="btn-line"><img src="images/chicken-leg.png"</span>
             <span class="btn-line" id="food">0</span>
         </button>
     </div>
@@ -84,8 +84,8 @@
 
     <div>
         <button onclick="prestige()">
-            <span class="btn-line">Prestige to gain a</span>
-            <span class="btn-line"><span id="presNum">1</span>x Multiplier</span>
+            <span class="btn-line">Prestige to gain a <span id="presNum">1</span>x Multiplier</span>
+            <span class="btn-line">(Currently <span id="presCurrent">1</span>x)</span>
         </button>
 
         <h1>Help</h1>
@@ -94,14 +94,14 @@
 
             <h2>Well, what do I do?</h2>
             <p>
-                Welcome! Under "Manual", Click each button 10 times. 🌳 = Wood, 🗿 = Stone, and 🥩 = Food. Now, purchase an Axe.
-                You are getting 1 wood per second, split into 200ms gaps. Purchase a Pickaxe and a Spear.
+                Welcome! Under "Manual", Click each button 10 times. Now, purchase an Axe.You are getting 1 wood per second, split into 200ms gaps.
+                Wait until you have 20 (2.00e+1) of each item and purchase a Pickaxe and a Spear.
             </p>
 
             <h2>Prestige</h2>
             <p>
-                For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 2, Tier 3 =
-                4, so on.) Each prestige point is a 1x multiplier, you start with 1.
+                For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 5, Tier 3 =
+                25, so on.) Each prestige point is a 1x multiplier, you start with 1.
             </p>
         </div>
 
@@ -120,7 +120,6 @@
         </button>
     </div>
 </div>
-
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128985761-1"></script>
