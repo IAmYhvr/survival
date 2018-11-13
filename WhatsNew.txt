@@ -1,0 +1,6 @@
+[What Was Changed]
+•Tier 2 (x10) & Tier 3 (x10(?)) Cost Increases
+•Tier 2 Production Increases (x2) & Tier 3 Decreases (x0.5)
+•Images instead of emojis, Finally!
+•Current Multiplier
+•Credits.txt, for creators of assets used in-game
