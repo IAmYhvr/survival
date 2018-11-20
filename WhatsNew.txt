@@ -1,6 +1,20 @@
-[What Was Changed]
-•Tier 2 (x10) & Tier 3 (x10(?)) Cost Increases
-•Tier 2 Production Increases (x2) & Tier 3 Decreases (x0.5)
-•Images instead of emojis, Finally!
-•Current Multiplier
-•Credits.txt, for creators of assets used in-game
+[First Part of Update, 2nd coming soon]
+First of all, I have made the choice to remove clicking. You start with 30 of each resource.
+Now, for the stuff.
+
+<-- What's Here -->
+
+•Fixed number rounding for resources upon purchase.
+•Made it so resources do not display like "0.00e+0" until 1e6
+•Added header with navigation
+•Added gradual introduction of tiers
+•More balancing tweaks
+
+<-- What's coming -->
+
+•Number rounding for costs
+•Better styling for header
+•More documentation in help
+•More stuff I will think of later
+•Bug fixes
+•Buy 10

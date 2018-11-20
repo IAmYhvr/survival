@@ -34,6 +34,60 @@ button:active{
     border-left: solid 2px #8f8f8f;
 }
 
-p {
+.helptext {
     padding: 0 200px;
 }
+
+.header {
+  background-color: #ADADAD;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.amt {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: monospace;
+  line-height: 32px;
+}
+
+.nav {
+  display: inline-block;
+  float: right;
+  text-align: center;
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: monospace;
+  line-height: 32px;
+}
+
+.tier {
+  display: none;
+}
+
+.resources {
+  display: inline-block;
+}
+
+.prestige {
+  display: none;
+}
+
+.help {
+  display: none;
+}
+
+.options {
+  display: none;
+}
+
+/***********
+***Hello,***
+***World!***
+*****:)*****
+***********/

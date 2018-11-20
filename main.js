@@ -1,8 +1,8 @@
 var savegame = JSON.parse(localStorage.getItem("save")); //Parse the save in localStorage
 
-var wood = 0;
-var stone = 0;              //Currency
-var food = 0;
+var wood = 30;
+var stone = 30;              //Currency
+var food = 30;
 
 var axes = 0;
 var axeCost = 10;
@@ -32,32 +32,48 @@ var presnum = 1.000;
 var timeSinceAutoSave = 0;   //Other
 
 function updateScreen() {
+  if (wood >= 1e6) {
     document.getElementById("wood").innerHTML = wood.toExponential(2);
+  } else {
+    document.getElementById("wood").innerHTML = wood;
+  }
+  if (stone >= 1e6) {
     document.getElementById("stone").innerHTML = stone.toExponential(2);  //Update GUI after load
+  } else {
+    document.getElementById("stone").innerHTML = stone;
+  }
+  if (food >= 1e6) {
     document.getElementById("food").innerHTML = food.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
+  } else {
+    document.getElementById("food").innerHTML = food;
+  }
 
-    document.getElementById("axes").innerHTML = axes;
-    document.getElementById("axeCost").innerHTML = axeCost;
-    document.getElementById("pickaxes").innerHTML = pickaxes;
+  document.getElementById("axes").innerHTML = axes;
+  if (food >= 1e6) {
+    document.getElementById("food").innerHTML = food.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
+  } else {
+    document.getElementById("food").innerHTML = food;
+  }
+  document.getElementById("pickaxes").innerHTML = pickaxes;
     document.getElementById("pickaxeCost").innerHTML = pickaxeCost;
-    document.getElementById("spears").innerHTML = spears;
+  document.getElementById("spears").innerHTML = spears;
     document.getElementById("spearCost").innerHTML = spearCost;
 
-    document.getElementById("lumberjacks").innerHTML = lumberjacks;
+  document.getElementById("lumberjacks").innerHTML = lumberjacks;
     document.getElementById("lumberjackCost").innerHTML = lumberjackCost.toExponential(2);
-    document.getElementById("miners").innerHTML = miners;
+  document.getElementById("miners").innerHTML = miners;
     document.getElementById("minerCost").innerHTML = minerCost.toExponential(2);
-    document.getElementById("hunters").innerHTML = hunters;
+  document.getElementById("hunters").innerHTML = hunters;
     document.getElementById("hunterCost").innerHTML = hunterCost.toExponential(2);
 
-    document.getElementById("forests").innerHTML = forests;
+  document.getElementById("forests").innerHTML = forests;
     document.getElementById("forestCost").innerHTML = forestCost.toExponential(2);
-    document.getElementById("quarries").innerHTML = quarries;
+  document.getElementById("quarries").innerHTML = quarries;
     document.getElementById("quarryCost").innerHTML = quarryCost.toExponential(2);
-    document.getElementById("farms").innerHTML = farms;
+  document.getElementById("farms").innerHTML = farms;
     document.getElementById("farmCost").innerHTML = farmCost.toExponential(2);
 
-    document.getElementById("presNum").innerHTML = presnum;
+  document.getElementById("presNum").innerHTML = presnum;
     document.getElementById("presCurrent").innerHTML = prestigeBanked;
 }
 
@@ -110,12 +126,15 @@ function foodClick(x) {
 
 function buyAxe(){  //The purchase functions...
     if(wood >= axeCost && stone >= axeCost && food >= axeCost){ //Checking to make sure requirements are met for purchase
-        wood -= axeCost; //Subtracting rescources
+        wood -= axeCost; //Subtracting resources
         stone -= axeCost;
         food -= axeCost;
-        axeCost += (axes); //Increasing price
+        axeCost = roundNum(axeCost, 1)
+        axeCost = axeCost * 1.15 //Increasing price
         axes += 1; //Increasing amout per second
         prestigeWTBC += 1;  //Prestinge-related
+        axeCost = roundNum(axeCost, 1) //Round the cost
+        roundR() //Round the resources
         updateScreen()
     }
 }
@@ -125,9 +144,11 @@ function buyPickaxe(){
         wood -= pickaxeCost;
         stone -= pickaxeCost;
         food -= pickaxeCost;
-        pickaxeCost += (pickaxes);
+        pickaxeCost = pickaxeCost * 1.15;
         pickaxes += 1;
         prestigeWTBC += 1;
+        pickaxeCost = roundNum(pickaxeCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -137,9 +158,11 @@ function buySpear(){
         wood -= spearCost;
         stone -= spearCost;
         food -= spearCost;
-        spearCost += (spears);
+        spearCost = spearCost * 1.15;
         spears += 1;
         prestigeWTBC += 1;
+        spearCost = roundNum(spearCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -148,9 +171,11 @@ function buyLumberjack(){
     if(stone >= lumberjackCost && food >= lumberjackCost){
         stone -= lumberjackCost;
         food -= lumberjackCost;
-        lumberjackCost += (lumberjacks * 1000);
+        lumberjackCost = lumberjackCost * 1.15;
         lumberjacks += 1;
         prestigeWTBC += 5;
+        lumberjackCost = roundNum(lumberjackCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -159,9 +184,11 @@ function buyMiner(){
     if(wood >= minerCost && food >= minerCost){
         wood -= minerCost;
         food -= minerCost;
-        minerCost += (miners * 1000);
+        minerCost = minerCost * 1.15;
         miners += 1;
         prestigeWTBC += 5;
+        minerCost = roundNum(minerCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -170,9 +197,11 @@ function buyHunter(){
     if(wood >= hunterCost && stone >= hunterCost){
         wood -= hunterCost;
         stone -= hunterCost;
-        hunterCost += (hunters * 1000);
+        hunterCost = hunterCost * 1.15;
         hunters += 1;
         prestigeWTBC += 5;
+        hunterCost = roundNum(hunterCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -181,9 +210,11 @@ function buyForest(){
     if(wood >= forestCost && food >= forestCost){
         wood -= forestCost;
         food -= forestCost;
-        forestCost += (lumberjacks * 100000);
+        forestCost = forestCost * 1.15;
         forests += 1;
         prestigeWTBC += 25;
+        forestCost = roundNum(forestCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -192,9 +223,11 @@ function buyQuarry(){
     if(stone >= quarryCost && food >= quarryCost){
         stone -= quarryCost;
         food -= quarryCost;
-        quarryCost += (quarries * 100000);
+        quarryCost = quarryCost * 1.15;
         quarries += 1;
         prestigeWTBC += 25;
+        quarryCost = roundNum(quarryCost, 1)
+        roundR()
         updateScreen()
     }
 }
@@ -203,11 +236,69 @@ function buyFarm(){
     if(wood >= farmCost && food >= farmCost){
         wood -= farmCost;
         food -= farmCost;
-        farmCost += (farms * 100000);
+        farmCost = farmCost * 1.15;
         farms += 1;
         prestigeWTBC += 25;
+        farmCost = roundNum(farmCost, 1)
+        roundR()
         updateScreen()
     }
+}
+
+function buyAxe10() {
+  if (wood >= (axeCost * 23.3) && stone >= (axeCost * 23.3) && food >= (axeCost * 23.3)) {
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+    buyAxe()
+  }
+}
+
+function roundR() {
+  wood = roundNum(wood, 1)
+  stone = roundNum(stone, 1)
+  food = roundNum(food, 1)
+}
+
+function menu1() {
+  document.getElementById("resources").style.display = "inline-block";
+  document.getElementById("prestige").style.display = "none";
+  document.getElementById("help").style.display = "none";
+  document.getElementById("options").style.display = "none";
+  if (prestigeBanked >= 50) {
+    document.getElementById("tier2").style.display = "inline-block";
+  }
+
+  if (prestigeBanked >= 250) {
+    document.getElementById("tier3").style.display = "inline-block";
+  }
+}
+
+function menu2() {
+  document.getElementById("resources").style.display = "none";
+  document.getElementById("prestige").style.display = "inline-block";
+  document.getElementById("help").style.display = "none";
+  document.getElementById("options").style.display = "none";
+}
+
+function menu3() {
+  document.getElementById("resources").style.display = "none";
+  document.getElementById("prestige").style.display = "none";
+  document.getElementById("help").style.display = "inline-block";
+  document.getElementById("options").style.display = "none";
+}
+
+function menu4() {
+  document.getElementById("resources").style.display = "none";
+  document.getElementById("prestige").style.display = "none";
+  document.getElementById("help").style.display = "none";
+  document.getElementById("options").style.display = "inline-block";
 }
 
 function save() { //This function saves the game!
@@ -245,9 +336,9 @@ function save() { //This function saves the game!
 
 function reset() { //Resets progress.
 
-    wood = 0;
-    stone = 0;              //Currency
-    food = 0;
+    wood = 30;
+    stone = 30;              //Currency
+    food = 30;
 
     axes = 0;
     axeCost = 10;
@@ -283,30 +374,30 @@ function prestige() { //Prestige function.
 
     prestigeWTBC = 0.000; //So you can't get it again
 
-      wood = 0;
-      stone = 0;              //Currency
-      food = 0;
+    wood = 30;
+    stone = 30;              //Currency
+    food = 30;
 
-      axes = 0;
-      axeCost = 10;
-      pickaxes = 0;           //Tier 1
-      pickaxeCost = 10;
-      spears = 0;
-      spearCost = 10;
+    axes = 0;
+    axeCost = 10;
+    pickaxes = 0;           //Tier 1
+    pickaxeCost = 10;
+    spears = 0;
+    spearCost = 10;
 
-      lumberjacks = 0;
-      lumberjackCost = 1e4;
-      miners = 0;             //Tier 2
-      minerCost = 1e4;
-      hunters = 0;
-      hunterCost = 1e4;
+    lumberjacks = 0;
+    lumberjackCost = 1e4;
+    miners = 0;             //Tier 2
+    minerCost = 1e4;
+    hunters = 0;
+    hunterCost = 1e4;
 
-      forests = 0;
-      forestCost = 1e7;
-      quarries = 0;             //Tier 3
-      quarryCost = 1e7;
-      farms = 0;
-      farmCost = 1e7;
+    forests = 0;
+    forestCost = 1e7;
+    quarries = 0;             //Tier 3
+    quarryCost = 1e7;
+    farms = 0;
+    farmCost = 1e7;
 
     updateScreen()
 }
@@ -323,16 +414,14 @@ function roundNum(num, precision) {
 }
 
 window.setInterval(function(){ //The Auto-Magic!
-    woodClick((axes + (lumberjacks * 50) + (forests * 500) * prestigeBanked) / 5); //Increases wood.
-    stoneClick((pickaxes + (miners * 50) + (quarries * 500)* prestigeBanked) / 5);
-    foodClick((spears + (hunters * 50) + (farms * 500) * prestigeBanked) / 5);
-    wood = roundNum(wood, 1)
-    stone = roundNum(stone, 1)
-    food = roundNum(food, 1)
-    timeSinceAutoSave += 0.2; //For Auto-Save.
-    if (timeSinceAutoSave === 15) {
+    woodClick((axes + (lumberjacks * 10) + (forests * 100) * prestigeBanked) / 5); //Increases wood.
+    stoneClick((pickaxes + (miners * 10) + (quarries * 100)* prestigeBanked) / 5);
+    foodClick((spears + (hunters * 10) + (farms * 100) * prestigeBanked) / 5);
+    roundR()
+    timeSinceAutoSave += 0.2; //For Auto-Save. (Is broken)
+    if (timeSinceAutoSave === 15.0) {
         save(); //Call the save function.
-        timeSinceAutoSave = 0 //Restart the Auto-Save cycle.
+        timeSinceAutoSave = 0.0 //Restart the Auto-Save cycle.
     }
     presnum = ((prestigeWTBC + 1) / prestigeBanked); //Updates the "Prestige to gain a x Multiplier" button
     presnum = roundNum(presnum, 1)
