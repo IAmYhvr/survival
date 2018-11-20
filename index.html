@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <!-- Meta Information -->
     <title>Survival.</title>
-    <meta name="description" content="Survival. An incremental game by YhvrWasTaken">
+    <meta name="description" content="Survival is an incremental game that heavily relies on a prestige mechanism.">
     <meta name="author" content="YhvrWasTaken">
     <!-- Link Stylesheet & Game Script -->
     <link rel="stylesheet" href="style.css">
@@ -13,24 +13,35 @@
 <body>
 
 <div>
+    <div class="header">
+      <div class="amt">
+        <img class="amt" src="images/1.png">
+        <p id="wood" class="amt">0</p>
+        <img class="amt" src="images/2.png">
+        <p id="stone" class="amt">0</p>
+        <img class="amt" src="images/3.png">
+        <p id="food" class="amt">0</p>
+      </div>
+      <div class="nav">
+        <button onclick="menu1()">
+          <span class="btn-line">Resources</span>
+        </button>
+        <button onclick="menu2()">
+          <span class="btn-line">Prestige</span>
+        </button>
+        <button onclick="menu3()">
+          <span class="btn-line">Help</span>
+        </button>
+        <button onclick="menu4()">
+          <span class="btn-line">Options</span>
+        </button>
+      </div>
+      </div>
+    <br>
 
-    <div>
-        <h1>Manual</h1>
-        <button onclick="woodClick(1)">
-            <span class="btn-line"><img src="images/wood-pile.png"></span>
-            <span class="btn-line" id="wood">0</span>
-        </button>
-        <button onclick="stoneClick(1)">
-            <span class="btn-line"><img src="images/stone-tablet.png"></span>
-            <span class="btn-line" id="stone">0</span>
-        </button>
-        <button onclick="foodClick(1)">
-            <span class="btn-line"><img src="images/chicken-leg.png"</span>
-            <span class="btn-line" id="food">0</span>
-        </button>
-    </div>
+    <div id="resources" class="resources">
 
-    <h1>Automatic</h1>
+    <h1>Resources</h1>
 
     <div>
         <h2>Tier 1</h2>
@@ -48,7 +59,7 @@
         </button>
     </div>
 
-    <div>
+    <div id="tier2" class="tier">
         <h2>Tier 2</h2>
         <button onclick="buyLumberjack()">
             <span class="btn-line">Lumberjacks : <span id="lumberjacks">0</span></span>
@@ -64,7 +75,7 @@
         </button>
     </div>
 
-    <div>
+    <div id="tier3" class="tier">
         <h2>Tier 3</h2>
         <button onclick="buyForest()">
             <span class="btn-line">Forests : <span id="forests">0</span></span>
@@ -80,6 +91,10 @@
         </button>
     </div>
 
+    </div>
+
+    <div id="prestige" class="prestige">
+
     <h1>Prestige</h1>
 
     <div>
@@ -87,27 +102,32 @@
             <span class="btn-line">Prestige to gain a <span id="presNum">1</span>x Multiplier</span>
             <span class="btn-line">(Currently <span id="presCurrent">1</span>x)</span>
         </button>
-
-        <h1>Help</h1>
-
-        <div>
-
-            <h2>Well, what do I do?</h2>
-            <p>
-                Welcome! Under "Manual", Click each button 10 times. Now, purchase an Axe.You are getting 1 wood per second, split into 200ms gaps.
-                Wait until you have 20 (2.00e+1) of each item and purchase a Pickaxe and a Spear.
-            </p>
-
-            <h2>Prestige</h2>
-            <p>
-                For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 5, Tier 3 =
-                25, so on.) Each prestige point is a 1x multiplier, you start with 1.
-            </p>
-        </div>
+    </div>
 
     </div>
 
-    <div>
+    <div id="help" class="help">
+
+      <h1>Help</h1>
+
+      <div>
+
+          <h2>Well, what do I do?</h2>
+          <p class="helptext">
+              Welcome! Purchase an Axe.You are getting 1 wood per second, split into 200ms gaps.
+              Now, purchase a Pickaxe and a Spear.
+          </p>
+
+          <h2>Prestige</h2>
+          <p class="helptext">
+              For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 5, Tier 3 =
+              25, so on.) Each prestige point is a 1x multiplier, you start with 1.
+          </p>
+      </div>
+
+    </div>
+
+    <div id="options" class="options">
         <h1>Options</h1>
         <button onclick="save()">
             <span class="btn-line">Save Game</span>
