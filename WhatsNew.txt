@@ -1,20 +1,11 @@
-[First Part of Update, 2nd coming soon]
-First of all, I have made the choice to remove clicking. You start with 30 of each resource.
-Now, for the stuff.
+[Second Part of Update]
+
 
 <-- What's Here -->
 
-•Fixed number rounding for resources upon purchase.
-•Made it so resources do not display like "0.00e+0" until 1e6
-•Added header with navigation
-•Added gradual introduction of tiers
-•More balancing tweaks
-
-<-- What's coming -->
-
-•Number rounding for costs
+•Making cost numbers exponential in costs if over 1e6
+•Cost rebalancing (x1.15 rounded instead of amount owned)
 •Better styling for header
 •More documentation in help
-•More stuff I will think of later
-•Bug fixes
 •Buy 10
+•Sexy new tab, Research! Trade prestige points for permanent upgrades.
