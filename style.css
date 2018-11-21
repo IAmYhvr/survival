@@ -4,7 +4,7 @@ body{
     font-family: Serif, serif;
 }
 
-h1, h2, p {
+h1, h2, h3, h4, h5, h6, p {
     color: #4CAF50;
 }
 
@@ -32,6 +32,12 @@ button {
 button:active{
     border-top: solid 2px #8f8f8f;
     border-left: solid 2px #8f8f8f;
+}
+
+.headerbtn {
+  color: #fff;
+  background: #ADADAD;
+  border: 0px;
 }
 
 .helptext {
@@ -83,6 +89,18 @@ button:active{
 }
 
 .options {
+  display: none;
+}
+
+.research {
+  display: none;
+}
+
+.amtt {
+  margin: 0 5px;
+}
+
+.proj2 {
   display: none;
 }
 

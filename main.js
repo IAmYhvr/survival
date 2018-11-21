@@ -4,6 +4,11 @@ var wood = 30;
 var stone = 30;              //Currency
 var food = 30;
 
+var research = 0;           //Probably Currency
+
+var researchproj1 = false;  //Stuff
+var researchproj2 = false;
+
 var axes = 0;
 var axeCost = 10;
 var pickaxes = 0;           //Tier 1
@@ -49,32 +54,52 @@ function updateScreen() {
   }
 
   document.getElementById("axes").innerHTML = axes;
-  if (food >= 1e6) {
-    document.getElementById("food").innerHTML = food.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
+  if (axeCost >= 1e6) {
+    document.getElementById("axeCost").innerHTML = axeCost.toExponential(2);
   } else {
-    document.getElementById("food").innerHTML = food;
+    document.getElementById("axeCost").innerHTML = axeCost;
   }
   document.getElementById("pickaxes").innerHTML = pickaxes;
+  if (pickaxeCost >= 1e6) {
+    document.getElementById("pickaxeCost").innerHTML = pickaxeCost.toExponential(2);
+  } else {
     document.getElementById("pickaxeCost").innerHTML = pickaxeCost;
+  }
   document.getElementById("spears").innerHTML = spears;
+  if (spearCost >= 1e6) {
+    document.getElementById("spearCost").innerHTML = spearCost.toExponential(2);
+  } else {
     document.getElementById("spearCost").innerHTML = spearCost;
+  }
 
   document.getElementById("lumberjacks").innerHTML = lumberjacks;
+  if (lumberjackCost >= 1e6) {
     document.getElementById("lumberjackCost").innerHTML = lumberjackCost.toExponential(2);
+  } else {
+    document.getElementById("lumberjackCost").innerHTML = lumberjackCost;
+  }
   document.getElementById("miners").innerHTML = miners;
+  if (minerCost >= 1e6) {
     document.getElementById("minerCost").innerHTML = minerCost.toExponential(2);
+  } else {
+    document.getElementById("minerCost").innerHTML = minerCost;
+  }
   document.getElementById("hunters").innerHTML = hunters;
+  if (hunterCost >= 1e6) {
     document.getElementById("hunterCost").innerHTML = hunterCost.toExponential(2);
+  } else {
+    document.getElementById("hunterCost").innerHTML = hunterCost;
+  }
 
   document.getElementById("forests").innerHTML = forests;
-    document.getElementById("forestCost").innerHTML = forestCost.toExponential(2);
+  document.getElementById("forestCost").innerHTML = forestCost.toExponential(2);
   document.getElementById("quarries").innerHTML = quarries;
-    document.getElementById("quarryCost").innerHTML = quarryCost.toExponential(2);
+  document.getElementById("quarryCost").innerHTML = quarryCost.toExponential(2);
   document.getElementById("farms").innerHTML = farms;
-    document.getElementById("farmCost").innerHTML = farmCost.toExponential(2);
+  document.getElementById("farmCost").innerHTML = farmCost.toExponential(2);
 
   document.getElementById("presNum").innerHTML = presnum;
-    document.getElementById("presCurrent").innerHTML = prestigeBanked;
+  document.getElementById("presCurrent").innerHTML = prestigeBanked;
 }
 
 if (savegame !== null) {
@@ -106,6 +131,11 @@ if (savegame !== null) {
 
     if (typeof savegame.prestigeWTBC !== "undefined") prestigeWTBC = savegame.prestigeWTBC;
     if (typeof savegame.prestigeBanked !== "undefined") prestigeBanked = savegame.prestigeBanked;
+
+    if (typeof savegame.prestigeBanked !== "undefined") research = savegame.research;
+
+    if (typeof savegame.prestigeBanked !== "undefined") researchproj1 = savegame.researchproj1;
+    if (typeof savegame.prestigeBanked !== "undefined") researchproj2 = savegame.researchproj2;
 
 }
 
@@ -257,6 +287,155 @@ function buyAxe10() {
     buyAxe()
     buyAxe()
     buyAxe()
+    updateScreen()
+  }
+}
+
+function buyPickaxe10() {
+  if (wood >= (pickaxeCost * 23.3) && stone >= (pickaxeCost * 23.3) && food >= (pickaxeCost * 23.3)) {
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    buyPickaxe()
+    updateScreen()
+  }
+}
+
+function buySpear10() {
+  if (wood >= (spearCost * 23.3) && stone >= (spearCost * 23.3) && food >= (spearCost * 23.3)) {
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    buySpear()
+    updateScreen()
+  }
+}
+
+function buyLumberjack10() {
+  if (wood >= (lumberjackCost * 23.3) && stone >= (lumberjackCost * 23.3) && food >= (lumberjackCost * 23.3)) {
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    buyLumberjack()
+    updateScreen()
+  }
+}
+
+function buyMiner10() {
+  if (wood >= (minerCost * 23.3) && stone >= (minerCost * 23.3) && food >= (minerCost * 23.3)) {
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    buyMiner()
+    updateScreen()
+  }
+}
+
+function buyHunter10() {
+  if (wood >= (hunterCost * 23.3) && stone >= (hunterCost * 23.3) && food >= (hunterCost * 23.3)) {
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    buyHunter()
+    updateScreen()
+  }
+}
+
+function buyForest10() {
+  if (wood >= (forestCost * 23.3) && stone >= (forestCost * 23.3) && food >= (forestCost * 23.3)) {
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    buyForest()
+    updateScreen()
+  }
+}
+
+function buyQuarry10() {
+  if (wood >= (quarryCost * 23.3) && stone >= (quarryCost * 23.3) && food >= (quarryCost * 23.3)) {
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    buyQuarry()
+    updateScreen()
+  }
+}
+
+function buyFarm10() {
+  if (wood >= (farmCost * 23.3) && stone >= (farmCost * 23.3) && food >= (farmCost * 23.3)) {
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    buyFarm()
+    updateScreen()
+  }
+}
+
+function proj1() {
+  if (research >= 1) {
+    research -= 1;
+    researchproj1 = true;
+    document.getElementById("researchamt").innerHTML = research;
+    document.getElementById("researchproj1").style.display = "none";
+    document.getElementById("researchproj2").style.display = "inline-block";
+  }
+}
+
+function proj2() {
+  if (research >= 10) {
+    research -= 10;
+    researchproj2 = true;
+    document.getElementById("researchamt").innerHTML = research;
+    document.getElementById("researchproj1").style.display = "none";
+    document.getElementById("researchproj2").style.display = "none";
   }
 }
 
@@ -268,36 +447,61 @@ function roundR() {
 
 function menu1() {
   document.getElementById("resources").style.display = "inline-block";
+  document.getElementById("research").style.display = "none";
   document.getElementById("prestige").style.display = "none";
   document.getElementById("help").style.display = "none";
   document.getElementById("options").style.display = "none";
-  if (prestigeBanked >= 50) {
+  if (researchproj1 == true) {
     document.getElementById("tier2").style.display = "inline-block";
   }
 
-  if (prestigeBanked >= 250) {
+  if (researchproj2 == true) {
     document.getElementById("tier3").style.display = "inline-block";
   }
 }
 
 function menu2() {
   document.getElementById("resources").style.display = "none";
-  document.getElementById("prestige").style.display = "inline-block";
+  document.getElementById("research").style.display = "inline-block";
+  document.getElementById("prestige").style.display = "none";
   document.getElementById("help").style.display = "none";
   document.getElementById("options").style.display = "none";
+
+  if (researchproj1 == true) {
+    if (researchproj2 == true) {
+      document.getElementById("researchproj1").style.display = "none";
+      document.getElementById("researchproj2").style.display = "none";
+    } else {
+      document.getElementById("researchproj1").style.display = "none";
+      document.getElementById("researchproj2").style.display = "inline-block";
+    }
+  } else {
+  document.getElementById("researchproj1").style.display = "inline-block";
+  document.getElementById("researchproj2").style.display = "none";
+  }
 }
 
 function menu3() {
   document.getElementById("resources").style.display = "none";
-  document.getElementById("prestige").style.display = "none";
-  document.getElementById("help").style.display = "inline-block";
+  document.getElementById("research").style.display = "none";
+  document.getElementById("prestige").style.display = "inline-block";
+  document.getElementById("help").style.display = "none";
   document.getElementById("options").style.display = "none";
 }
 
 function menu4() {
   document.getElementById("resources").style.display = "none";
   document.getElementById("prestige").style.display = "none";
+  document.getElementById("research").style.display = "none";
+  document.getElementById("help").style.display = "inline-block";
+  document.getElementById("options").style.display = "none";
+}
+
+function menu5() {
+  document.getElementById("resources").style.display = "none";
+  document.getElementById("prestige").style.display = "none";
   document.getElementById("help").style.display = "none";
+  document.getElementById("research").style.display = "none";
   document.getElementById("options").style.display = "inline-block";
 }
 
@@ -402,10 +606,19 @@ function prestige() { //Prestige function.
     updateScreen()
 }
 
+function researchtrade() {
+  if (prestigeBanked > 10) {
+    prestigeBanked -= 10
+    research += 1
+    document.getElementById("researchamt").innerHTML = research;
+  }
+}
+
 function cheat(x) { //For development purposes, Feel free to use while bored
     wood = x * 1e100;
     stone = x * 1e100;
     food = x * 1e100;
+    prestigeBanked = x * 1e100;
 }
 
 function roundNum(num, precision) {
