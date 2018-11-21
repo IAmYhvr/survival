@@ -16,23 +16,26 @@
     <div class="header">
       <div class="amt">
         <img class="amt" src="images/1.png">
-        <p id="wood" class="amt">0</p>
+        <p id="wood" class="amt amtt">30</p>
         <img class="amt" src="images/2.png">
-        <p id="stone" class="amt">0</p>
+        <p id="stone" class="amt amtt">30</p>
         <img class="amt" src="images/3.png">
-        <p id="food" class="amt">0</p>
+        <p id="food" class="amt amtt">30</p>
       </div>
       <div class="nav">
-        <button onclick="menu1()">
+        <button onclick="menu1()" class="headerbtn">
           <span class="btn-line">Resources</span>
         </button>
-        <button onclick="menu2()">
+        <button onclick="menu2()" class="headerbtn">
+          <span class="btn-line">Research</span>
+        </button>
+        <button onclick="menu3()" class="headerbtn">
           <span class="btn-line">Prestige</span>
         </button>
-        <button onclick="menu3()">
+        <button onclick="menu4()" class="headerbtn">
           <span class="btn-line">Help</span>
         </button>
-        <button onclick="menu4()">
+        <button onclick="menu5()" class="headerbtn">
           <span class="btn-line">Options</span>
         </button>
       </div>
@@ -57,7 +60,19 @@
             <span class="btn-line">Spears : <span id="spears">0</span></span>
             <span class="btn-line">Cost : <span id="spearCost">10</span> Wood, Stone, Food</span>
         </button>
+        <br>
+        <button onclick="buyAxe10()">
+            <span class="btn-line">Buy 10 Axes</span>
+        </button>
+        <button onclick="buyPickaxe10()">
+            <span class="btn-line">Buy 10 Pickaxes</span>
+        </button>
+        <button onclick="buySpear10()">
+            <span class="btn-line">Buy 10 Spears</span>
+        </button>
     </div>
+
+    <br>
 
     <div id="tier2" class="tier">
         <h2>Tier 2</h2>
@@ -73,7 +88,19 @@
             <span class="btn-line">Hunters : <span id="hunters">0</span></span>
             <span class="btn-line">Cost : <span id="hunterCost">1000</span> Wood, Stone</span>
         </button>
+        <br>
+        <button onclick="buyLumberjack10()">
+            <span class="btn-line">Buy 10 lumberjacks</span>
+        </button>
+        <button onclick="buyMiner10()">
+            <span class="btn-line">Buy 10 Miners</span>
+        </button>
+        <button onclick="buyHunter10()">
+            <span class="btn-line">Buy 10 Hunters</span>
+        </button>
     </div>
+
+    <br>
 
     <div id="tier3" class="tier">
         <h2>Tier 3</h2>
@@ -89,7 +116,41 @@
             <span class="btn-line">Farms : <span id="farms">0</span></span>
             <span class="btn-line">Cost : <span id="farmCost">1000000</span> Wood, Food</span>
         </button>
+        <br>
+        <button onclick="buyForest10()">
+            <span class="btn-line">Buy 10 Forests</span>
+        </button>
+        <button onclick="buyQuarry10()">
+            <span class="btn-line">Buy 10 Quarries</span>
+        </button>
+        <button onclick="buyFarm10()">
+            <span class="btn-line">Buy 10 Farms</span>
+        </button>
     </div>
+
+    </div>
+
+    <div id="research" class="research">
+
+      <h1>Research</h1>
+
+      <h3>You Have <span id="researchamt">0</span> Research.</h3>
+
+      <button onclick="researchtrade()">
+        <span id="btn-line">10 Prestige Points -> 1 Research</span>
+      </button>
+
+      <br>
+
+      <button id="researchproj1" onclick="proj1()">
+        <span class="btn-line">Tier 2</span>
+        <span class="btn-line">Cost: 1 Research</span>
+      </button>
+
+      <button id="researchproj2" onclick="proj2()">
+        <span class="btn-line">Tier 3</span>
+        <span class="btn-line">Cost: 10 Research</span>
+      </button>
 
     </div>
 
@@ -112,11 +173,15 @@
 
       <div>
 
-          <h2>Well, what do I do?</h2>
+          <h2>I have no clue what an incremental game is, why am I here</h2>
           <p class="helptext">
-              Welcome! Purchase an Axe.You are getting 1 wood per second, split into 200ms gaps.
-              Now, purchase a Pickaxe and a Spear.
+            Welcome! I'm glad you made the choice to play this. First, Let's start with resources. In the top right, you should see 3 pictures and 3 numbers. <em><b>Wood, Stone & Food.</b></em>
+            These are the heart of the game. Your goal is to get them as high as possible, with no end. Now, let's go to resources and purchase an axe, a pickaxe, and a spear. You are now getting 1 wood, 1 stone, and 1 food per second, split into 200ms gaps.
+
+            By the way, prestige is used as a term where you reset almost everything or everything, to gain a multiplier, helping you reach bigger numbers faster.
           </p>
+
+          <h2>
 
           <h2>Prestige</h2>
           <p class="helptext">
