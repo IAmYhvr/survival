@@ -1,11 +1,10 @@
-[Second Part of Update]
+[v0.1]
 
 
 <-- What's Here -->
 
-•Making cost numbers exponential in costs if over 1e6
-•Cost rebalancing (x1.15 rounded instead of amount owned)
-•Better styling for header
-•More documentation in help
-•Buy 10
-•Sexy new tab, Research! Trade prestige points for permanent upgrades.
+•Relocation! Unlock new currency, buildings, etc.
+•Prestige balancing
+•Changed / Added documentation in help
+•Research & Relocate tabs appear later in game
+•Favicon (Possibly Broken)
