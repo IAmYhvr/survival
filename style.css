@@ -84,6 +84,10 @@ button:active{
   display: none;
 }
 
+.relocate {
+  display: none;
+}
+
 .help {
   display: none;
 }
@@ -101,6 +105,22 @@ button:active{
 }
 
 .proj2 {
+  display: none;
+}
+
+.metal {
+  display: none;
+}
+
+.metalimg {
+  visibility: hidden;
+}
+
+.researchbtn {
+  display: none;
+}
+
+.relocatebtn {
   display: none;
 }
 
