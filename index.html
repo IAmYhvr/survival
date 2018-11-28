@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <!-- Meta Information -->
-    <title>Survival.</title>
+    <title>Survival</title>
     <meta name="description" content="Survival is an incremental game that heavily relies on a prestige mechanism.">
     <meta name="author" content="YhvrWasTaken">
     <!-- Link Stylesheet & Game Script -->
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="main.js"></script>
+    <link rel=icon href=favicon.ico>
 </head>
 <body>
 
@@ -21,21 +22,26 @@
         <p id="stone" class="amt amtt">30</p>
         <img class="amt" src="images/3.png">
         <p id="food" class="amt amtt">30</p>
+          <img class="amt metalimg" id="metalimg" src="images/4.png">
+          <p  class="amt amtt metal" id="metal">30</p>
       </div>
       <div class="nav">
         <button onclick="menu1()" class="headerbtn">
-          <span class="btn-line">Resources</span>
+          <span class="btn-line">Buildings</span>
         </button>
-        <button onclick="menu2()" class="headerbtn">
+        <button onclick="menu2()" class="headerbtn researchbtn" id="researchbtn">
           <span class="btn-line">Research</span>
         </button>
         <button onclick="menu3()" class="headerbtn">
           <span class="btn-line">Prestige</span>
         </button>
-        <button onclick="menu4()" class="headerbtn">
-          <span class="btn-line">Help</span>
+        <button onclick="menu4()" class="headerbtn relocatebtn" id="relocatebtn">
+          <span class="btn-line">Relocate</span>
         </button>
         <button onclick="menu5()" class="headerbtn">
+          <span class="btn-line">Help</span>
+        </button>
+        <button onclick="menu6()" class="headerbtn">
           <span class="btn-line">Options</span>
         </button>
       </div>
@@ -44,7 +50,7 @@
 
     <div id="resources" class="resources">
 
-    <h1>Resources</h1>
+    <h1>Buildings</h1>
 
     <div>
         <h2>Tier 1</h2>
@@ -158,11 +164,35 @@
 
     <h1>Prestige</h1>
 
+    <p>
+      Prestige to gain prestige points that you can spend on new features, or get multipliers.
+    </p>
+
     <div>
         <button onclick="prestige()">
-            <span class="btn-line">Prestige to gain a <span id="presNum">1</span>x Multiplier</span>
+            <span class="btn-line">Prestige to gain a <span id="presNum">1</span>x (Additive) Multiplier</span>
             <span class="btn-line">(Currently <span id="presCurrent">1</span>x)</span>
         </button>
+    </div>
+
+    </div>
+
+    <div id="relocate" class="relocate">
+
+    <h1>Relocate</h1>
+
+    <p>
+      Relocate to discover new materials & buildings.
+    </p>
+
+    <div>
+        <button onclick="relocate1()" id="relocate1">
+            <span class="btn-line">Relocation 1</span>
+            <span class="btn-line">250 Prestige Points</span>
+        </button>
+        <p id="relocate2">
+          Congratulations. You have reached what is (currently) The End! Sit back, Relax, and get a life.
+        </p>
     </div>
 
     </div>
@@ -181,12 +211,14 @@
             By the way, prestige is used as a term where you reset almost everything or everything, to gain a multiplier, helping you reach bigger numbers faster.
           </p>
 
-          <h2>
-
           <h2>Prestige</h2>
           <p class="helptext">
-              For each building you purchase, you gain prestige points waiting to be claimed. (Tier 1 = 1, Tier 2 = 5, Tier 3 =
-              25, so on.) Each prestige point is a 1x multiplier, you start with 1.
+              You need a total of 1000 of wood, stone & food to gain a prestige point waiting to be claimed. After that goal if reached, the total of each (wood, stone, food) goes back to 0, and the required amount increases by x1.01.
+          </p>
+
+          <h2>Relocation</h2>
+          <p class="helptext">
+              Relocating unlocks new content, Such as currencies or tabs. To relocate the first time, You have to spend 250 Prestige Points. (The first relocation is currently the end of the game, however, you can play on.)
           </p>
       </div>
 
@@ -196,7 +228,7 @@
         <h1>Options</h1>
         <button onclick="save()">
             <span class="btn-line">Save Game</span>
-            <span class="btn-line">(AUTOSAVE BROKEN)</span>
+            <span class="btn-line">Autosave every 15s</span>
 
         </button>
         <button onclick="reset()">
