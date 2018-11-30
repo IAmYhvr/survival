@@ -713,6 +713,15 @@ window.setInterval(function(){ //The Auto-Stuff
     woodClick((game.axes + (game.lumberjacks * 10) + (game.forests * 100) * game.prestigeBanked) / 5); //Increases wood.
     stoneClick((game.pickaxes + (game.miners * 10) + (game.quarries * 100)* game.prestigeBanked) / 5);
     foodClick((game.spears + (game.hunters * 10) + (game.farms * 100) * game.prestigeBanked) / 5);
+    if(game.axes == 0) {
+      game.wood += 0.1;
+    }
+    if(game.pickaxes == 0) {
+      game.stone += 0.1;
+    }
+    if(game.spears == 0) {
+      game.food += 0.1;
+    }
     metalClick((game.pickaxes + (game.miners * 10) + (game.quarries * 100)* game.prestigeBanked) / 20);
     roundR()
     if (game.woodtot >= game.mForPres && game.stonetot >= game.mForPres && game.foodtot >= game.mForPres) {
