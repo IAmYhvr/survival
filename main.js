@@ -50,60 +50,60 @@ function updateScreen() {
   if (game.wood >= 1e6) {
     document.getElementById("wood").innerHTML = game.wood.toExponential(2);
   } else {
-    document.getElementById("wood").innerHTML = game.wood;
+    document.getElementById("wood").innerHTML = game.wood.toFixed(1);
   }
   if (game.stone >= 1e6) {
     document.getElementById("stone").innerHTML = game.stone.toExponential(2);  //Update GUI after load
   } else {
-    document.getElementById("stone").innerHTML = game.stone;
+    document.getElementById("stone").innerHTML = game.stone.toFixed(1);
   }
   if (game.food >= 1e6) {
     document.getElementById("food").innerHTML = game.food.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
   } else {
-    document.getElementById("food").innerHTML = game.food;
+    document.getElementById("food").innerHTML = game.food.toFixed(1);
   }
   if (game.metal >= 1e6) {
     document.getElementById("metal").innerHTML = game.metal.toExponential(2);    //BTW, the .toExponential(2) makes it so that it shows 1.00e+0
   } else {
-    document.getElementById("metal").innerHTML = game.metal;
+    document.getElementById("metal").innerHTML = game.metal.toFixed(1);
   }
 
   document.getElementById("axes").innerHTML = game.axes;
   if (game.axeCost >= 1e6) {
     document.getElementById("axeCost").innerHTML = game.axeCost.toExponential(2);
   } else {
-    document.getElementById("axeCost").innerHTML = game.axeCost;
+    document.getElementById("axeCost").innerHTML = game.axeCost.toFixed(1);
   }
   document.getElementById("pickaxes").innerHTML = game.pickaxes;
   if (game.pickaxeCost >= 1e6) {
     document.getElementById("pickaxeCost").innerHTML = game.pickaxeCost.toExponential(2);
   } else {
-    document.getElementById("pickaxeCost").innerHTML = game.pickaxeCost;
+    document.getElementById("pickaxeCost").innerHTML = game.pickaxeCost.toFixed(1);
   }
   document.getElementById("spears").innerHTML = game.spears;
   if (game.spearCost >= 1e6) {
     document.getElementById("spearCost").innerHTML = game.spearCost.toExponential(2);
   } else {
-    document.getElementById("spearCost").innerHTML = game.spearCost;
+    document.getElementById("spearCost").innerHTML = game.spearCost.toFixed(1);
   }
 
   document.getElementById("lumberjacks").innerHTML = game.lumberjacks;
   if (game.lumberjackCost >= 1e6) {
     document.getElementById("lumberjackCost").innerHTML = game.lumberjackCost.toExponential(2);
   } else {
-    document.getElementById("lumberjackCost").innerHTML = game.lumberjackCost;
+    document.getElementById("lumberjackCost").innerHTML = game.lumberjackCost.toFixed(1);
   }
   document.getElementById("miners").innerHTML = game.miners;
   if (game.minerCost >= 1e6) {
     document.getElementById("minerCost").innerHTML = game.minerCost.toExponential(2);
   } else {
-    document.getElementById("minerCost").innerHTML = game.minerCost;
+    document.getElementById("minerCost").innerHTML = game.minerCost.toFixed(1);
   }
   document.getElementById("hunters").innerHTML = game.hunters;
   if (game.hunterCost >= 1e6) {
     document.getElementById("hunterCost").innerHTML = game.hunterCost.toExponential(2);
   } else {
-    document.getElementById("hunterCost").innerHTML = game.hunterCost;
+    document.getElementById("hunterCost").innerHTML = game.hunterCost.toFixed(1);
   }
 
   document.getElementById("forests").innerHTML = game.forests;
