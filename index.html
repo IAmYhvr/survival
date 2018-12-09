@@ -8,73 +8,78 @@
     <meta name="author" content="YhvrWasTaken">
     <!-- Link Stylesheet & Game Script -->
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="main.js"></script>
     <link rel=icon href=favicon.ico>
 </head>
 <body>
 
 <div>
     <div class="header">
+      <!-- Header -->
       <div class="amt">
-        <img class="amt" src="images/1.png">
-        <p id="wood" class="amt amtt">30</p>
-        <img class="amt" src="images/2.png">
-        <p id="stone" class="amt amtt">30</p>
-        <img class="amt" src="images/3.png">
-        <p id="food" class="amt amtt">30</p>
-          <img class="amt metalimg" id="metalimg" src="images/4.png">
-          <p  class="amt amtt metal" id="metal">30</p>
+        <!-- Amounts -->
+          <img class="amt amtimg" src="images/1.svg">
+          <p id="wood" class="amt amtt">30</p>
+          <img class="amt amtimg" src="images/2.svg">
+          <p id="stone" class="amt amtt">30</p>
+          <img class="amt amtimg" src="images/3.svg">
+          <p id="food" class="amt amtt">30</p>
+        <img class="amt amtimg metalimg" id="metalimg" src="images/4.svg">
+        <p class="amt amtt metal" id="metal">30</p>
       </div>
       <div class="nav">
-        <button onclick="menu1()" class="headerbtn">
+        <!-- Navigation -->
+        <button onclick="changeMenu('resources')" class="headerbtn">
           <span class="btn-line">Buildings</span>
         </button>
-        <button onclick="menu2()" class="headerbtn researchbtn" id="researchbtn">
+        <button onclick="changeMenu('research')" class="headerbtn researchbtn" id="researchbtn">
           <span class="btn-line">Research</span>
         </button>
-        <button onclick="menu3()" class="headerbtn">
+        <button onclick="changeMenu('prestige')" class="headerbtn">
           <span class="btn-line">Prestige</span>
         </button>
-        <button onclick="menu4()" class="headerbtn relocatebtn" id="relocatebtn">
+        <button onclick="changeMenu('relocate')" class="headerbtn relocatebtn" id="relocatebtn">
           <span class="btn-line">Relocate</span>
         </button>
-        <button onclick="menu5()" class="headerbtn">
+        <button onclick="changeMenu('help')" class="headerbtn">
           <span class="btn-line">Help</span>
         </button>
-        <button onclick="menu6()" class="headerbtn">
+        <button onclick="changeMenu('options')" class="headerbtn">
           <span class="btn-line">Options</span>
         </button>
       </div>
       </div>
     <br>
 
-    <div id="resources" class="resources">
+    <div id="resources">
 
     <h1>Buildings</h1>
 
     <div>
         <h2>Tier 1</h2>
         <button onclick="buyAxe()">
-            <span class="btn-line">Axes : <span id="axes">0</span></span>
+            <span class="btn-line">Axes : <span id="axes">1</span></span>
             <span class="btn-line">Cost : <span id="axeCost">10</span> Wood, Stone, Food</span>
         </button>
         <button onclick="buyPickaxe()">
-            <span class="btn-line">Pickaxes : <span id="pickaxes">0</span></span>
+            <span class="btn-line">Pickaxes : <span id="pickaxes">1</span></span>
             <span class="btn-line">Cost : <span id="pickaxeCost">10</span> Wood, Stone, Food</span>
         </button>
         <button onclick="buySpear()">
-            <span class="btn-line">Spears : <span id="spears">0</span></span>
+            <span class="btn-line">Spears : <span id="spears">1</span></span>
             <span class="btn-line">Cost : <span id="spearCost">10</span> Wood, Stone, Food</span>
         </button>
         <br>
         <button onclick="buyAxe10()">
             <span class="btn-line">Buy 10 Axes</span>
+            <span class="btn-line">Cost: <span id="buy10AxesCost"></span></span>
         </button>
         <button onclick="buyPickaxe10()">
             <span class="btn-line">Buy 10 Pickaxes</span>
+            <span class="btn-line">Cost: <span id="buy10PickaxesCost"></span></span>
         </button>
         <button onclick="buySpear10()">
             <span class="btn-line">Buy 10 Spears</span>
+            <span class="btn-line">Cost: <span id="buy10SpearsCost"></span></span>
         </button>
     </div>
 
@@ -96,13 +101,16 @@
         </button>
         <br>
         <button onclick="buyLumberjack10()">
-            <span class="btn-line">Buy 10 lumberjacks</span>
+            <span class="btn-line">Buy 10 Lumberjacks</span>
+            <span class="btn-line">Cost: <span id="buy10LumberjacksCost"></span></span>
         </button>
         <button onclick="buyMiner10()">
             <span class="btn-line">Buy 10 Miners</span>
+            <span class="btn-line">Cost: <span id="buy10MinersCost"></span></span>
         </button>
         <button onclick="buyHunter10()">
             <span class="btn-line">Buy 10 Hunters</span>
+            <span class="btn-line">Cost: <span id="buy10HuntersCost"></span></span>
         </button>
     </div>
 
@@ -125,18 +133,21 @@
         <br>
         <button onclick="buyForest10()">
             <span class="btn-line">Buy 10 Forests</span>
+            <span class="btn-line">Cost: <span id="buy10ForestsCost"></span></span>
         </button>
         <button onclick="buyQuarry10()">
             <span class="btn-line">Buy 10 Quarries</span>
+            <span class="btn-line">Cost: <span id="buy10QuarriesCost"></span></span>
         </button>
         <button onclick="buyFarm10()">
             <span class="btn-line">Buy 10 Farms</span>
+            <span class="btn-line">Cost: <span id="buy10FarmsCost"></span></span>
         </button>
     </div>
 
     </div>
 
-    <div id="research" class="research">
+    <div id="research">
 
       <h1>Research</h1>
 
@@ -145,27 +156,29 @@
       <button onclick="researchtrade()">
         <span id="btn-line">10 Prestige Points -> 1 Research</span>
       </button>
+      <button onclick="researchMetalTrade()" id="mTR" class="mTR">
+        <span id="btn-line">100 Metal -> 1 Research</span>
+      </button>
 
       <br>
 
-      <button id="researchproj1" onclick="proj1()">
-        <span class="btn-line">Tier 2</span>
-        <span class="btn-line">Cost: 1 Research</span>
-      </button>
-
-      <button id="researchproj2" onclick="proj2()">
-        <span class="btn-line">Tier 3</span>
-        <span class="btn-line">Cost: 10 Research</span>
+      <button id="researchproj" onclick="research()">
+        <span id="researchDescription" class="btn-line">Tier 2</span>
+        <span class="btn-line">Cost: <span id="researchCost">1</span> Research</span>
       </button>
 
     </div>
 
-    <div id="prestige" class="prestige">
+    <div id="prestige">
 
     <h1>Prestige</h1>
 
     <p>
       Prestige to gain prestige points that you can spend on new features, or get multipliers.
+    </p>
+
+    <p>
+      <span id="woodUntilPP">1000</span> Wood, <span id="stoneUntilPP">1000</span> Stone, and <span id="foodUntilPP">1000</span> Food for your next prestige point.
     </p>
 
     <div>
@@ -177,7 +190,7 @@
 
     </div>
 
-    <div id="relocate" class="relocate">
+    <div id="relocate">
 
     <h1>Relocate</h1>
 
@@ -186,18 +199,15 @@
     </p>
 
     <div>
-        <button onclick="relocate1()" id="relocate1">
-            <span class="btn-line">Relocation 1</span>
-            <span class="btn-line">250 Prestige Points</span>
+        <button onclick="relocate()" id="relocatebtn">
+            <span class="btn-line">Relocation <span id="relocateNum">1</span></span>
+            <span class="btn-line"><span id="ppRequired">250</span> Prestige Points</span>
         </button>
-        <p id="relocate2">
-          Congratulations. You have reached what is (currently) The End! Sit back, Relax, and get a life.
-        </p>
     </div>
 
     </div>
 
-    <div id="help" class="help">
+    <div id="help">
 
       <h1>Help</h1>
 
@@ -224,7 +234,7 @@
 
     </div>
 
-    <div id="options" class="options">
+    <div id="options">
         <h1>Options</h1>
         <button onclick="save()">
             <span class="btn-line">Save Game</span>
@@ -241,5 +251,10 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128985761-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-128985761-1');</script>
+<!-- JS -->
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="loading.js"></script>
+<script type="text/javascript" src="research.js"></script>
+<script type="text/javascript" src="relocations.js"></script>
 </body>
 </html>
