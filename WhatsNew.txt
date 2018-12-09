@@ -1,10 +1,11 @@
-[v0.1]
-
+[v0.2]
 
 <-- What's Here -->
 
-•Relocation! Unlock new currency, buildings, etc.
-•Prestige balancing
-•Changed / Added documentation in help
-•Research & Relocate tabs appear later in game
-•Favicon (Possibly Broken)
+•PNG? *heh*, More like, SVG.
+•Cost for buy 10 now displayed
+•Amount required for prestige point now displayed
+•Confirmation for reset
+•More research projects
+•Metal to research trade
+•Many optimizations
