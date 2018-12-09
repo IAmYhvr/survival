@@ -2,9 +2,10 @@ body{
     /* Background color and default font */
     background: #383838;
     font-family: Serif, serif;
+    margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+p, h1, h2, h3 {
     color: #4CAF50;
 }
 
@@ -41,7 +42,7 @@ button:active{
 }
 
 .helptext {
-    padding: 0 200px;
+    padding: 0 25%;
 }
 
 .header {
@@ -61,6 +62,11 @@ button:active{
   line-height: 32px;
 }
 
+.amtimg {
+  width: 32px;
+  height: 32px;
+}
+
 .nav {
   display: inline-block;
   float: right;
@@ -76,27 +82,27 @@ button:active{
   display: none;
 }
 
-.resources {
+#resources {
   display: inline-block;
 }
 
-.prestige {
+#prestige {
   display: none;
 }
 
-.relocate {
+#relocate {
   display: none;
 }
 
-.help {
+#help {
   display: none;
 }
 
-.options {
+#options {
   display: none;
 }
 
-.research {
+#research {
   display: none;
 }
 
@@ -124,8 +130,10 @@ button:active{
   display: none;
 }
 
-/***********
-***Hello,***
-***World!***
-*****:)*****
-***********/
+.mTR {
+  display: none;
+}
+
+/****************
+*u/YhvrTheSecond*
+****************/
