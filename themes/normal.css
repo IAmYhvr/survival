@@ -1,0 +1,7 @@
+body, .header, .coolcss, button, .headerbtn {
+  background-color: #383838;
+}
+
+*, p, h1, h2, h3, .headerbtn {
+  color: white;
+}
