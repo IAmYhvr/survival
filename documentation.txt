@@ -1,0 +1,12 @@
+What's This? Documentation? Wow! I made my code hard to read! Oh well, let's start.
+[] indicates code.
+__________
+
+=> "Game" Object <=
+
+Most of the game data is stored in [game].
+The first bit of it is quite easy to read. [game.items.wood] - [game.items.food] are wood - food.
+the next bit, gets a little trickier. [game.buildings]. [t1] - [t3] is tier, and [w], [s], and [f] are what it produces.
+[cost] is, well, cost. And [amount] is... Amount.
+
+more documentation soon
