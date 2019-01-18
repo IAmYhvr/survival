@@ -1,6 +1,6 @@
-Wood : https://game-icons.net/delapouite/originals/log.html
-Stone : https://game-icons.net/lorc/originals/stone-tablet.html
-Food : https://game-icons.net/lorc/originals/meat.html
-Metal : https://game-icons.net/lorc/originals/metal-bar.html 
+SCRIPTS
+
+Format.js : https://github.com/IvarK/Format.js (IvarK, aka Hevipelle)
+JQuery : https://jquery.com (I dunno, I linked it. Is that enough?)
 
 Thanks, All! :)
