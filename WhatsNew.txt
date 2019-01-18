@@ -1,11 +1,13 @@
-[v0.2]
+[v0.3]
 
-<-- What's Here -->
+• COMPLETE CSS OVERHAUL
+• COMPLETE JAVASCRIPT OVERHAUL
+• COMPLETE UI OVERHAUL
 
-•PNG? *heh*, More like, SVG.
-•Cost for buy 10 now displayed
-•Amount required for prestige point now displayed
-•Confirmation for reset
-•More research projects
-•Metal to research trade
-•Many optimizations
+OVERHAUL
+
+YEAHHHHHHHHHHHHHHHH
+
+• Relocation has been removed, along with metal. documentation.txt has been added. All formatting is now done with Format.js. I care about your privacy, so I removed google analytics. •
+
+Working on kong implementation.

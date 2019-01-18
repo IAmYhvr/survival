@@ -1,12 +1,16 @@
+html, body {
+  height: 100%;
+}
+
 body{
     /* Background color and default font */
-    background: #383838;
-    font-family: Serif, serif;
+    background: white;
+    font-family: sans-serif, sans-serif;
     margin: 0;
 }
 
 p, h1, h2, h3 {
-    color: #4CAF50;
+    color: black;
 }
 
 div {
@@ -36,9 +40,20 @@ button:active{
 }
 
 .headerbtn {
-  color: #fff;
-  background: #ADADAD;
-  border: 0px;
+  font-size: 15px;
+  color: black;
+  background: white;
+  width: 125px;
+  height: 25px;
+  border-radius: 5px;
+  border-color: darkgray;
+  border-width: thin;
+  overflow: hidden;
+}
+
+.headerbtn:active{
+    border-top: solid thin darkgray;
+    border-left: solid thin darkgray;
 }
 
 .helptext {
@@ -46,12 +61,33 @@ button:active{
 }
 
 .header {
-  background-color: #ADADAD;
+  position: fixed;
   overflow: hidden;
   padding: 10px;
+  border-bottom: thin solid;
+  border-color: darkgray;
+  width: 100%;
+  background-color: white;
 }
 
-.amt {
+#amt {
+  display: inline-block;
+  float: left;
+  text-align: left;
+  color: black;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: monospace;
+  margin-right: 25px;
+  border: solid thin darkgray;
+  position: sticky;
+  top: 100%;
+  bottom: 0px;
+  width: 75%;
+  overflow: visible;
+}
+
+.nav {
   display: inline-block;
   float: left;
   text-align: center;
@@ -62,14 +98,19 @@ button:active{
   line-height: 32px;
 }
 
-.amtimg {
-  width: 32px;
-  height: 32px;
+.subheader {
+  margin-top: 13px;
+  position: fixed;
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: thin solid;
+  border-color: darkgray;
+  width: 100%;
 }
 
-.nav {
+.subnav {
   display: inline-block;
-  float: right;
+  float: left;
   text-align: center;
   color: white;
   margin-top: auto;
@@ -78,31 +119,36 @@ button:active{
   line-height: 32px;
 }
 
+.subheaderbtn {
+  font-size: 15px;
+  color: black;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  border-color: darkgray;
+  border-width: thin;
+  overflow: hidden;
+}
+
+.subheaderbtn:active{
+    border-top: solid thin darkgray;
+    border-left: solid thin darkgray;
+}
+
 .tier {
-  display: none;
+  margin-top: 85px;
 }
 
 #resources {
   display: inline-block;
 }
 
-#prestige {
-  display: none;
+#resources, #prestige, #help, #options, #research {
+  margin-top: 25px;
+  width: 100%;
 }
 
-#relocate {
-  display: none;
-}
-
-#help {
-  display: none;
-}
-
-#options {
-  display: none;
-}
-
-#research {
+#prestige, #help, #options, #research {
   display: none;
 }
 
@@ -110,30 +156,27 @@ button:active{
   margin: 0 5px;
 }
 
-.proj2 {
-  display: none;
-}
-
-.metal {
-  display: none;
-}
-
 .metalimg {
   visibility: hidden;
 }
 
-.researchbtn {
-  display: none;
+.coolcss {
+  margin-top: -10px;
+  margin-left: 10px;
+  background: white;
+  width: 65px;
+  text-align: center;
 }
 
-.relocatebtn {
-  display: none;
-}
-
-.mTR {
-  display: none;
+.coolcss2 {
+  margin: 0px;
+  margin-top: -15px;
+  margin-left: 10px;
 }
 
 /****************
-*u/YhvrTheSecond*
+*Jeez, something*
+* new each versi*
+*on? this is har*
+*d! /s    -Yhvr *
 ****************/
