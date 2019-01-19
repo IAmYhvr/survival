@@ -1,6 +1,15 @@
 if (savegame !== null) {
-  game = savegame
+  if (savegame.options.version == "0.3.1") {
+    game = savegame
+  } else {
+    game.items = savegame.items
+    game.buildings = savegame.buildings
+    game.multipliers = savegame.multipliers
+    game.prestige = savegame.prestige
+    game.research = savegame.research
+    game.options.theme = savegame.options.theme
+  }
   update.all()
 }
 
-// why don't i just add this on to main.js? i don't know.
+// oh, that's why.
