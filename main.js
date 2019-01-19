@@ -66,7 +66,9 @@ var game = {
     t3: 1
   },
   options: {
-    theme: "Light"
+    theme: "Light",
+    version: "0.3.1",
+    lastTick: Date.now()
   }
 }
 
@@ -207,7 +209,8 @@ function changeMenu(menu) {
 }
 
 function calcGains(type) {
-  return((game.buildings.t1[type].amount * game.multipliers.t1 * (game.prestige.claimed + 1)) + (game.buildings.t2[type].amount * 10 * game.multipliers.t1 * (game.prestige.claimed + 1)) + (game.buildings.t3[type].amount * 100 * game.multipliers.t1 * (game.prestige.claimed + 1)))
+  var diff = (Date.now() - game.options.lastTick) / 200
+  return(((game.buildings.t1[type].amount * game.multipliers.t1 * (game.prestige.claimed + 1)) + (game.buildings.t2[type].amount * 10 * game.multipliers.t1 * (game.prestige.claimed + 1)) + (game.buildings.t3[type].amount * 100 * game.multipliers.t1 * (game.prestige.claimed + 1))) * diff)
 }
 
 /* Options */
@@ -257,6 +260,7 @@ var mainGameLoop = window.setInterval(function() {
   game.prestige.untilUnclaimed -= calcGains("w") / 5
   game.prestige.untilUnclaimed -= calcGains("s") / 5
   game.prestige.untilUnclaimed -= calcGains("f") / 5
+  game.options.lastTick = Date.now()
   while (game.prestige.untilUnclaimed <= 0) {
     game.prestige.unclaimed += 1
     game.prestige.untilUnclaimedStartingAmount *= 1.25
