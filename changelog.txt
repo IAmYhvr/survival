@@ -1,3 +1,9 @@
+[v0.3.1]
+
+• Game now works offline
+• Fixed little error in help
+• Renamed WhatsNew.txt to changelog.txt
+
 [v0.3]
 
 • COMPLETE CSS OVERHAUL
